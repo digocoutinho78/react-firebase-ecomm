@@ -5,7 +5,7 @@ export default ScreenInicial = ({ navigation }) => {
   return(
     <View>
       <Text>TESTE DAS ROTAS</Text>
-      <Button title="IR PARA TABS" onPress={() => navigation.navigate('Tabs')}/>
+      <Button title="IR PARA TABS" onPress={() => navigation.navigate('Login')}/>
     </View>
   )
 }

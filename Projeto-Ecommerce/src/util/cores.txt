@@ -1,0 +1,11 @@
+
+
+#E7ECEF - texto
+
+#274C77 - background
+
+#6096BA
+
+#A3CEF1
+
+#8B8C89 - texto
