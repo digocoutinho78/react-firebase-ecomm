@@ -1,10 +1,10 @@
 import { Text, View, StyleSheet } from "react-native"
 
 //Componente para testar as tabs estão funcionando
-export default TabUm = () => {
+export default TabDois = () => {
   return(
     <View style={styles.container}>
-      <Text  >Tab Um</Text>
+      <Text  >Tab Dois</Text>
     </View>
   )
 }

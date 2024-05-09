@@ -1,6 +1,8 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import TabUm from "../screens/TabUm";
+import TabUm from "../screens/Home";
 import { FontAwesome } from "@expo/vector-icons";
+import TabDois from "../screens/TabDois";
+import TabTres from "../screens/TabTres";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
@@ -16,7 +18,7 @@ export default Tabs = () => {
 
 
       <Screen name="Home"
-        component={TabUm}
+        component={Home}
         options={{
           headerShown: false,
           // title: "Início",
@@ -35,7 +37,7 @@ export default Tabs = () => {
           ),
         }} />
         <Screen name="Tela 2"
-        component={TabUm}
+        component={TabDois}
         options={{
           headerShown: false,
           // title: "Início",
@@ -44,7 +46,7 @@ export default Tabs = () => {
           ),
         }} />
         <Screen name="Tela 3"
-        component={TabUm}
+        component={TabTres}
         options={{
           headerShown: false,
           // title: "Início",
