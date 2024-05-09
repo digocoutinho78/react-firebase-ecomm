@@ -6,7 +6,10 @@ const { Navigator, Screen} = createBottomTabNavigator();
 export default Tabs = () => {
 
   return(
-    <Navigator> 
+    <Navigator screenOptions={{
+      // esconder o header
+      headerShown: false,
+    }}> 
       <Screen name='tela1' component={TabUm}/>
     </Navigator>
   )
