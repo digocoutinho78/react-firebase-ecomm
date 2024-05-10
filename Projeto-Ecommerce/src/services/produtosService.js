@@ -1,27 +1,29 @@
-import { api } from "./api";
+import { api } from './api'
 
-//Criando os metodos do crud
 
-//Metodo para criar/cadastrar o produto com um parametro para categoria do produto para
-//
+// Método para criar/cadastrar um produto com um parâmetro para a categoria do produto
 export const criarProduto = async (dadosProduto) => {
   try {
+    // Faz uma requisição POST para a API, enviando os dados do produto
     const resp = await api.post(`/Produtos.json`, dadosProduto);
   } catch (err) {
+    // Em caso de erro, loga a mensagem de erro
     console.log("ERRO: " + err);
   }
 };
 
-//Metodo para excluir o produto
+// Método para excluir um produto
 export const deletarProduto = async (id) => {
   try {
+    // Faz uma requisição DELETE para a API, passando o ID do produto a ser excluído
     const resp = await api.delete("/Produtos/" + id + ".json");
   } catch (err) {
+    // Em caso de erro, loga a mensagem de erro
     console.log("ERRO: " + err);
   }
 };
 
-//Metodo para editar o produto
+// Método para editar um produto
 export const editarProduto = async (
   id,
   nome,
@@ -31,6 +33,7 @@ export const editarProduto = async (
   disponibilidade
 ) => {
   try {
+    // Faz uma requisição PUT para a API, atualizando os dados do produto com base no ID
     const resp = await api.put(`/Produtos/${id}.json`, {
       nome: nome,
       descricao: descricao,
@@ -39,34 +42,41 @@ export const editarProduto = async (
       disponibilidade: disponibilidade,
     });
   } catch (err) {
+    // Em caso de erro, loga a mensagem de erro
     console.log("ERRO: " + err);
   }
 };
 
-//Metodo para listar os produto
+// Método para listar todos os produtos
 export const listarProduto = async (token) => {
   try {
     const produtos = [];
+    // Faz uma requisição GET para a API, obtendo todos os produtos
     const resp = await api.get(`/Produtos?key=${token}.json`);
 
-    for (key in resp.data) {
+    // Itera sobre os produtos retornados e os adiciona a um array
+    for (const key in resp.data) {
       const produto = {
         ...resp.data[key],
         id: key,
       };
       produtos.push(produto);
     }
-    return produtos;
+    return produtos; // Retorna a lista de produtos
   } catch (err) {
+    // Em caso de erro, loga a mensagem de erro
     console.log(err);
   }
 };
 
+// Método para obter um produto específico por ID
 export const pegarPorId = async (id) => {
   try {
+    // Faz uma requisição GET para a API, obtendo os dados do produto com base no ID
     const resp = await api.get(`/Produtos/${id}.json`);
-    return resp.data;
+    return resp.data; // Retorna os dados do produto
   } catch (err) {
+    // Em caso de erro, loga a mensagem de erro
     console.log("ERRO: ", err);
   }
 };
