@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from "react-native"
 export default TabDois = () => {
   return(
     <View style={styles.container}>
-      <Text  >Tab Dois</Text>
+      <Text >Tab Dois</Text>
     </View>
   )
 }
