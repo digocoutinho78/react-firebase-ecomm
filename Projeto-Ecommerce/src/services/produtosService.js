@@ -3,11 +3,12 @@ import { api } from './api'
 
 //Criando os metodos do crud
 
-//Metodo para criar/cadastrar o produto
-export const criarProduto = async() => {
+//Metodo para criar/cadastrar o produto com um parametro para categoria do produto para 
+//
+export const criarProduto = async (teste) => {
 try{
 
-  const resp = await api.post()
+  const resp = await api.post(`/Produtos.json`, teste)
 }
 catch(err){
   console.log("ERRO: " + err)
@@ -16,11 +17,10 @@ catch(err){
 
 }
 
-//Metodo para excluir o produto
-export const deletarProduto = async() => {
+//Metodo para excluir o produto 
+export const deletarProduto = async(id) => {
   try{
-
-    const resp = await api.delete()
+    const resp = await api.delete(`/Produtos`+ id + 'json')
   }
   catch(err){
     console.log("ERRO: " + err)
@@ -30,11 +30,17 @@ export const deletarProduto = async() => {
 
 
 //Metodo para editar o produto
-export const editarProduto = async() => {
+export const editarProduto = async(id,nome, descricao, categoria, precoReal, disponibilidade) => {
 
   try{
 
-    const resp = await api.put()
+    const resp = await api.put(`/Produtos/${id}.json`,{
+      nome: nome,
+      descricao: descricao,
+      categoria: categoria,
+      precoReais: precoReal,
+      disponibilidade: disponibilidade 
+    })
   }
   catch(err){
     console.log("ERRO: " + err)
