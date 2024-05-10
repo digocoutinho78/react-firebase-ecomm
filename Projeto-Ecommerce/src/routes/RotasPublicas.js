@@ -1,11 +1,11 @@
 import { createStackNavigator } from '@react-navigation/stack'
-import Tabs from './bottom-tabs-routes'
+import Tabs from './RotasPrivadas'
 import TesteRotas from '../screens/Teste-Rotas';
 import { Login } from '../screens/Login';
 
 const { Navigator, Screen} = createStackNavigator();
 
-export default Stack = () => {
+export default RotasPublicas = () => {
 
   return(
     <Navigator screenOptions={{

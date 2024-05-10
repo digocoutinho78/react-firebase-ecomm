@@ -1,12 +1,13 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import TabUm from "../screens/Home";
+import TabUm from "../screens/TabUm";
 import { FontAwesome } from "@expo/vector-icons";
 import TabDois from "../screens/TabDois";
 import TabTres from "../screens/TabTres";
+import Home from "../screens/Home";
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
-export default Tabs = () => {
+export default RotasPrivadas = () => {
   return (
     <Navigator
       screenOptions={{

@@ -5,10 +5,10 @@ import { api } from './api'
 
 //Metodo para criar/cadastrar o produto com um parametro para categoria do produto para 
 //
-export const criarProduto = async (teste) => {
+export const criarProduto = async (dadosProduto) => {
 try{
 
-  const resp = await api.post(`/Produtos.json`, teste)
+  const resp = await api.post(`/Produtos.json`, dadosProduto)
 }
 catch(err){
   console.log("ERRO: " + err)
@@ -20,7 +20,7 @@ catch(err){
 //Metodo para excluir o produto 
 export const deletarProduto = async(id) => {
   try{
-    const resp = await api.delete(`/Produtos`+ id + 'json')
+    const resp = await api.delete('/Produtos/'+ id + '.json')
   }
   catch(err){
     console.log("ERRO: " + err)
@@ -33,7 +33,6 @@ export const deletarProduto = async(id) => {
 export const editarProduto = async(id,nome, descricao, categoria, precoReal, disponibilidade) => {
 
   try{
-
     const resp = await api.put(`/Produtos/${id}.json`,{
       nome: nome,
       descricao: descricao,
@@ -50,12 +49,21 @@ export const editarProduto = async(id,nome, descricao, categoria, precoReal, dis
 
 
 //Metodo para listar os produto
-export const listarProduto = async() => {
+export const listarProduto = async(token) => {
 
-  try{
-    const resp = await api.get()
-  }
-  catch(err){
-    console.log("ERRO: " + err)
-  }
+  try {
+    const produtos = []
+    const response = await api.get(`/Produtos?key=${token}.json`)
+
+    for(key in response.data) {
+        const produto = {
+            ...response.data[key],
+            id: key,
+        }
+        produtos.push(produto)
+    }
+    return produtos;
+} catch(err) {
+    console.log(err)
+}
 }
