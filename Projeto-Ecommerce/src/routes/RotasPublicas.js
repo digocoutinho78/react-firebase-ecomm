@@ -13,7 +13,6 @@ export default RotasPublicas = () => {
       headerShown: false,
     }}> 
       <Screen name='Tela-Incial' component={Login}/>
-  
       {/* Screen tabs dentro de stack para termos a mudança de tipo de navegação quando entrar no app */}
       <Screen name='Tabs'  component={Tabs}/>
     </Navigator>

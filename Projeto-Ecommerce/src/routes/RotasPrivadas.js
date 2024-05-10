@@ -2,7 +2,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TabUm from "../screens/TabUm";
 import { FontAwesome } from "@expo/vector-icons";
 import TabDois from "../screens/TabDois";
-import TabTres from "../screens/TabTres";
+import AboutScreen from "../screens/AboutScreen";
 import Home from "../screens/Home";
 
 const { Navigator, Screen } = createBottomTabNavigator();
@@ -47,7 +47,7 @@ export default RotasPrivadas = () => {
           ),
         }} />
         <Screen name="Tela 3"
-        component={TabTres}
+        component={AboutScreen}
         options={{
           headerShown: false,
           // title: "Início",
