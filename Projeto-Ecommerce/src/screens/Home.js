@@ -49,14 +49,14 @@ const handleCadastroProduto = async(nomeProduto, descricao, categoria, precoReai
       <Text style={styles.texto} >CATEGORIA</Text>
       <TextInput style={styles.input} value={categoria} onChangeText={setCategoria}/>
       <Text style={styles.texto} >PREÇO</Text>
-      <TextInput style={styles.input} value={precoReais} onChangeText={setPrecoReais}/>
+      <TextInput style={styles.input} value={precoReais} keyboardType="number-pad" onChangeText={setPrecoReais}/>
       <Text style={styles.texto} >QUANTIDADE DISPONÍVEL</Text>
       <TextInput  style={styles.input} value={disponibilidade} keyboardType="number-pad" onChangeText={setDisponibilidade}/>
       <Button title="cadastrar produto" onPress={() => handleCadastroProduto(nomeProduto, descricao, categoria, precoReais, disponibilidade)}/> 
 
-      <Button title="deletar" onPress={() => deletarProduto("-NxYAHsDaXrJHavFyMjL")} />
+      <Button  title="deletar" onPress={() => deletarProduto("-NxYAHsDaXrJHavFyMjL")} />
 
-      <Button title="editar" onPress={() => editarProduto("-NxY7skC6iAeKFdW09sY","jabulani", "A bola de futebol mais sinistra", "bola", "100R$", 50)}/>
+      <Button  title="editar" onPress={() => editarProduto("-NxY7skC6iAeKFdW09sY","jabulani", "A bola de futebol mais sinistra", "bola", "100R$", 50)}/>
     </View>
   )
 }
@@ -101,6 +101,12 @@ const styles = StyleSheet.create({
     color: "#E7ECEF",
     fontSize: 20,
     fontWeight: "600",
+    marginBottom: 20,
+    marginTop: 20,
+    textAlign: "center"
+  }, 
+  button: {
+    
     marginBottom: 20,
     marginTop: 20,
     textAlign: "center"
