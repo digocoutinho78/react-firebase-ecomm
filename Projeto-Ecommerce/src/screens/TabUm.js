@@ -19,13 +19,18 @@ export default TabUm = () => {
   // Renderização do componente
   return (
     <View style={styles.container}>
+      <Text style={styles.titleScreen}> PRODUTOS CADASTRADOS</Text>
+
       {/* Renderizando a lista de produtos */}
       <FlatList
         data={todosProdutos} // Dados dos produtos
         keyExtractor={(item) => item.id} // Chave única para cada item
         renderItem={({ item }) => (
+          
           // Renderizando cada item da lista
           <View style={styles.item}>
+
+            
             {/* Renderizando os atributos do produto */}
             <Text style={styles.title}>{item.nome}</Text>
             <Text style={styles.description}>Descrição:   {item.descricao}</Text>
@@ -47,7 +52,9 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "#274C77",
-    paddingTop: 150,
+    paddingTop: 70,
+    
+    
   },
   item: {
     backgroundColor: 'white',
@@ -56,7 +63,17 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     marginHorizontal: 16,
     borderRadius: 10,
+    marginBottom: 10,
   },
+  titleScreen: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    marginBottom: 10,
+    color: 'whitesmoke',
+    marginTop: 20,
+    marginBottom: 20,
+  },
+
   title: {
     fontSize: 24,
     fontWeight: 'bold',
