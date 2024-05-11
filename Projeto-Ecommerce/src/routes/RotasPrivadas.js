@@ -3,6 +3,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
 import TabUm from "../screens/TabUm";
 import DetalhesProduto from '../screens/DetalhesProduto'; // Importando o componente DetalhesProduto
+import EditarProduto from '../screens/EditarProduto';
 import { FontAwesome } from "@expo/vector-icons";
 import TabDois from "../screens/TabDois";
 import AboutScreen from "../screens/AboutScreen";
@@ -69,6 +70,7 @@ export default RotasPrivadas = () => {
     >
       <Stack.Screen name="Tabs" component={TabNavigator} />
       <Stack.Screen name="DetalhesProduto" component={DetalhesProduto} />
+      <Stack.Screen name="EditarProduto" component={EditarProduto} />
     </Stack.Navigator>
   );
 };
