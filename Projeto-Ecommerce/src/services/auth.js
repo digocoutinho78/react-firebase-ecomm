@@ -18,7 +18,7 @@ const authenticate = async (mode, email, password) => {
     }
 }
 
-export const createUser = async (email, password) => {
+export const criarUsuario = async (email, password) => {
     const token = await authenticate("signUp", email, password)
     return token
 }

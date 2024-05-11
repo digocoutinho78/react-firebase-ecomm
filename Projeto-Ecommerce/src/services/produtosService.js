@@ -48,11 +48,11 @@ export const editarProduto = async (
 };
 
 // Método para listar todos os produtos
-export const listarProduto = async (token) => {
+export const listarProduto = async () => {
   try {
     const produtos = [];
     // Faz uma requisição GET para a API, obtendo todos os produtos
-    const resp = await api.get(`/Produtos?key=${token}.json`);
+    const resp = await api.get(`/Produtos.json`);
 
     // Itera sobre os produtos retornados e os adiciona a um array
     for (const key in resp.data) {
