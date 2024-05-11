@@ -59,6 +59,7 @@ export const listarProduto = async () => {
       const produto = {
         ...resp.data[key],
         id: key,
+        
       };
       produtos.push(produto);
     }
