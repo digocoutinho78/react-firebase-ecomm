@@ -1,3 +1,5 @@
+
+import DetalhesProduto from '../screens/DetalhesProduto';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import TabUm from "../screens/TabUm";
 import { FontAwesome } from "@expo/vector-icons";
@@ -9,6 +11,10 @@ const { Navigator, Screen } = createBottomTabNavigator();
 
 export default RotasPrivadas = () => {
   return (
+
+
+
+    
     <Navigator
       screenOptions={{
         // esconder o header
@@ -46,6 +52,15 @@ export default RotasPrivadas = () => {
             <FontAwesome name="globe" color={color} size={size} />
           ),
         }} />
+        <Screen name="Detalhes"
+        component={DetalhesProduto}
+        options={{
+          headerShown: false,
+          // title: "Início",
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="globe" color={color} size={size} />
+          ),
+        }} />
         <Screen name="Sobre"
         component={AboutScreen}
         options={{
@@ -54,7 +69,11 @@ export default RotasPrivadas = () => {
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="users" color={color} size={size} />
           ),
+          
         }} />
     </Navigator>
+
+
+
   );
 };

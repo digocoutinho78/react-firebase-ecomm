@@ -1,10 +1,10 @@
 // Importando os componentes necessários do React e React Native
-import { Text, StyleSheet, FlatList, View } from "react-native";
+import { Text, StyleSheet, FlatList, View, TouchableOpacity } from "react-native";
 import { listarProduto } from "../services/produtosService"; // Importando o método listarProduto do serviço de produtos
 import { useEffect, useState } from "react";
 
 // Componente TabUm
-export default TabUm = () => {
+export default TabUm = ({ navigation }) => { // Adicionando navigation como propriedade
   const [todosProdutos, setTodosProdutos] = useState([]); // Estado para armazenar todos os produtos
 
   // Hook useEffect para buscar os produtos quando o componente for montado
@@ -26,19 +26,19 @@ export default TabUm = () => {
         data={todosProdutos} // Dados dos produtos
         keyExtractor={(item) => item.id} // Chave única para cada item
         renderItem={({ item }) => (
-          
-          // Renderizando cada item da lista
-          <View style={styles.item}>
-
-            
-            {/* Renderizando os atributos do produto */}
-            <Text style={styles.title}>{item.nome}</Text>
-            <Text style={styles.description}>Descrição:   {item.descricao}</Text>
-            <Text style={styles.category}>Categoria:   {item.categoria}</Text>
-            <Text style={styles.price}>Valor unt:   {item.precoReais}</Text>
-            <Text style={styles.availability}>Status: {item.disponibilidade ? "Disponível" : "Indisponível"}</Text>
-            <Text style={styles.id}>id: {item.id}</Text>
-          </View>
+          // Adicionando TouchableOpacity para tornar cada item clicável
+          <TouchableOpacity onPress={() => navigation.navigate('DetalhesProduto', { id: item.id })}>
+            {/* Renderizando cada item da lista */}
+            <View style={styles.item}>
+              {/* Renderizando os atributos do produto */}
+              <Text style={styles.title}>{item.nome}</Text>
+              <Text style={styles.description}>Descrição:   {item.descricao}</Text>
+              <Text style={styles.category}>Categoria:   {item.categoria}</Text>
+              <Text style={styles.price}>Valor unt:   {item.precoReais}</Text>
+              <Text style={styles.availability}>Status: {item.disponibilidade ? "Disponível" : "Indisponível"}</Text>
+              <Text style={styles.id}>id: {item.id}</Text>
+            </View>
+          </TouchableOpacity>
         )}
       />
     </View>
@@ -53,8 +53,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     backgroundColor: "#274C77",
     paddingTop: 70,
-    
-    
   },
   item: {
     backgroundColor: 'white',
@@ -73,7 +71,6 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginBottom: 20,
   },
-
   title: {
     fontSize: 24,
     fontWeight: 'bold',
