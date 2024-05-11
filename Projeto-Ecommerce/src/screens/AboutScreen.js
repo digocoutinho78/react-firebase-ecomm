@@ -13,20 +13,20 @@ const AboutScreen = () => {
       <Image  style={styles.profileImage} />
       <View>
         <Text style={styles.title1}>Jean Pires</Text>
-        <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
+        <Text style={styles.description}>JEAN PIRES. SÓ ISSO</Text>
       </View>
       <View style={styles.linksContainer}>
-                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/JeanPiresM')}>
                     <FontAwesome name="github" size={30} color="whitesmoke" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/miguel-araujo-7a37b8247/')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/jean-pires-aa4796279/')}>
                     <FontAwesome name="linkedin" size={30} color="cyan" />
                 </TouchableOpacity>
             </View>
       <View>
       <Image  style={styles.profileImage} />
         <Text style={styles.title1}>Miguel Araujo</Text>
-        <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
+        <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver, além disso um homem muito esbelto.</Text>
       </View>
       <View style={styles.linksContainer}>
                 <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
@@ -43,10 +43,10 @@ const AboutScreen = () => {
         <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
       </View>
       <View style={styles.linksContainer}>
-                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/digocoutinho78')}>
                     <FontAwesome name="github" size={30} color="whitesmoke" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/miguel-araujo-7a37b8247/')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/digocoutinho/')}>
                     <FontAwesome name="linkedin" size={30} color="cyan" />
                 </TouchableOpacity>
             </View>
@@ -54,13 +54,13 @@ const AboutScreen = () => {
       <Image  style={styles.profileImage} />
 
         <Text style={styles.title1}>Pedro Henrique</Text>
-        <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
+        <Text style={styles.description}>Aluno de Engenharia de Computação no CEFET Petrópolis e residente no Serratec/Senac, pego 50kg cada lado no supino..</Text>
       </View>
       <View style={styles.linksContainer}>
-                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/PedroHenriqueBRibeiro')}>
                     <FontAwesome name="github" size={30} color="whitesmoke" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/miguel-araujo-7a37b8247/')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/pedro-henrique-39aab8282/')}>
                     <FontAwesome name="linkedin" size={30} color="cyan" />
                 </TouchableOpacity>
             </View>
@@ -71,10 +71,10 @@ const AboutScreen = () => {
         <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
       </View>
       <View style={styles.linksContainer}>
-                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://github.com/SamuFreitas10')}>
                     <FontAwesome name="github" size={30} color="whitesmoke" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/miguel-araujo-7a37b8247/')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/samuel-freitas-80679626b/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app')}>
                     <FontAwesome name="linkedin" size={30} color="cyan" />
                 </TouchableOpacity>
             </View>
@@ -88,7 +88,7 @@ const AboutScreen = () => {
                 <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
                     <FontAwesome name="github" size={30} color="whitesmoke" />
                 </TouchableOpacity>
-                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/miguel-araujo-7a37b8247/')}>
+                <TouchableOpacity onPress={() => Linking.openURL('https://www.linkedin.com/in/lourencofilho-dev/')}>
                     <FontAwesome name="linkedin" size={30} color="cyan" />
                 </TouchableOpacity>
             </View>

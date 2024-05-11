@@ -46,7 +46,7 @@ export default RotasPrivadas = () => {
             <FontAwesome name="globe" color={color} size={size} />
           ),
         }} />
-        <Screen name="Tela 3"
+        <Screen name="Sobre"
         component={AboutScreen}
         options={{
           headerShown: false,
