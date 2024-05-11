@@ -1,79 +1,74 @@
-
-import DetalhesProduto from '../screens/DetalhesProduto';
+// Importando os componentes necessários do React Navigation
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from '@react-navigation/stack';
 import TabUm from "../screens/TabUm";
+import DetalhesProduto from '../screens/DetalhesProduto'; // Importando o componente DetalhesProduto
 import { FontAwesome } from "@expo/vector-icons";
 import TabDois from "../screens/TabDois";
 import AboutScreen from "../screens/AboutScreen";
 import Home from "../screens/Home";
 
-const { Navigator, Screen } = createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
-export default RotasPrivadas = () => {
+// Componente para as telas do Tab Navigator
+function TabNavigator() {
   return (
-
-
-
-    
-    <Navigator
+    <Tab.Navigator
       screenOptions={{
         // esconder o header
         headerShown: false,
       }}
     >
-
-
-
-      <Screen name="Home"
+      <Tab.Screen name="Home"
         component={Home}
         options={{
           headerShown: false,
-          // title: "Início",
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="home" color={color} size={size} />
           ),
         }} />
 
-      <Screen name="Tela 1"
+      <Tab.Screen name="Tela 1"
         component={TabUm}
         options={{
           headerShown: false,
-          // title: "Início",
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="tag" color={color} size={size} />
           ),
         }} />
-        <Screen name="Tela 2"
+
+      <Tab.Screen name="Tela 2"
         component={TabDois}
         options={{
           headerShown: false,
-          // title: "Início",
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="globe" color={color} size={size} />
           ),
         }} />
-        <Screen name="Detalhes"
-        component={DetalhesProduto}
-        options={{
-          headerShown: false,
-          // title: "Início",
-          tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="globe" color={color} size={size} />
-          ),
-        }} />
-        <Screen name="Sobre"
+
+      <Tab.Screen name="Sobre"
         component={AboutScreen}
         options={{
           headerShown: false,
-          // title: "Início",
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="users" color={color} size={size} />
           ),
-          
         }} />
-    </Navigator>
+    </Tab.Navigator>
+  );
+}
 
-
-
+export default RotasPrivadas = () => {
+  return (
+    <Stack.Navigator
+      screenOptions={{
+        // esconder o header
+        headerShown: false,
+      }}
+    >
+      <Stack.Screen name="Tabs" component={TabNavigator} />
+      <Stack.Screen name="DetalhesProduto" component={DetalhesProduto} />
+    </Stack.Navigator>
   );
 };
