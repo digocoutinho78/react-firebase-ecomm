@@ -1,22 +1,31 @@
 // Importando os componentes necessários do React e React Native
-import { Text, StyleSheet, FlatList, View, TouchableOpacity } from "react-native";
+
+import React, { useState, useCallback } from "react";
+import {
+  Text,
+  StyleSheet,
+  FlatList,
+  View,
+  TouchableOpacity,
+} from "react-native";
+import { useFocusEffect } from "@react-navigation/native";
 import { listarProduto } from "../services/produtosService"; // Importando o método listarProduto do serviço de produtos
-import { useEffect, useState } from "react";
 
 // Componente TabUm
-export default TabUm = ({ navigation }) => { // Adicionando navigation como propriedade
+export default TabUm = ({ navigation }) => {
+  // Adicionando navigation como propriedade
   const [todosProdutos, setTodosProdutos] = useState([]); // Estado para armazenar todos os produtos
 
-  // Hook useEffect para buscar os produtos quando o componente for montado
-  useEffect(() => {
-    const fetch = async () => {
-      const data = await listarProduto(); // Buscando os produtos
-      setTodosProdutos(data); // Atualizando o estado com os produtos buscados
-    };
-    fetch();
-  }, []);
-
-  // Renderização do componente
+  // Hook useFocusEffect para buscar os produtos quando a tela ganha foco
+  useFocusEffect(
+    useCallback(() => {
+      const fetch = async () => {
+        const data = await listarProduto(); // Buscando os produtos
+        setTodosProdutos(data); // Atualizando o estado com os produtos buscados
+      };
+      fetch();
+    }, [])
+  );
   return (
     <View style={styles.container}>
       <Text style={styles.titleScreen}> PRODUTOS CADASTRADOS</Text>
@@ -27,15 +36,23 @@ export default TabUm = ({ navigation }) => { // Adicionando navigation como prop
         keyExtractor={(item) => item.id} // Chave única para cada item
         renderItem={({ item }) => (
           // Adicionando TouchableOpacity para tornar cada item clicável
-          <TouchableOpacity onPress={() => navigation.navigate('DetalhesProduto', { id: item.id })}>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("DetalhesProduto", { id: item.id })
+            }
+          >
             {/* Renderizando cada item da lista */}
             <View style={styles.item}>
               {/* Renderizando os atributos do produto */}
               <Text style={styles.title}>{item.nome}</Text>
-              <Text style={styles.description}>Descrição:   {item.descricao}</Text>
-              <Text style={styles.category}>Categoria:   {item.categoria}</Text>
-              <Text style={styles.price}>Valor unt:   {item.precoReais}</Text>
-              <Text style={styles.availability}>Status: {item.disponibilidade ? "Disponível" : "Indisponível"}</Text>
+              <Text style={styles.description}>
+                Descrição: {item.descricao}
+              </Text>
+              <Text style={styles.category}>Categoria: {item.categoria}</Text>
+              <Text style={styles.price}>Valor unt: {item.precoReais}</Text>
+              <Text style={styles.availability}>
+                Status: {item.disponibilidade ? "Disponível" : "Indisponível"}
+              </Text>
               <Text style={styles.id}>id: {item.id}</Text>
             </View>
           </TouchableOpacity>
@@ -55,8 +72,8 @@ const styles = StyleSheet.create({
     paddingTop: 70,
   },
   item: {
-    backgroundColor: 'white',
-    width: '90%',
+    backgroundColor: "white",
+    width: "90%",
     padding: 10,
     marginVertical: 8,
     marginHorizontal: 16,
@@ -65,33 +82,33 @@ const styles = StyleSheet.create({
   },
   titleScreen: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 10,
-    color: 'whitesmoke',
+    color: "whitesmoke",
     marginTop: 20,
     marginBottom: 20,
   },
   title: {
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: "bold",
   },
   description: {
     fontSize: 18,
   },
   category: {
     fontSize: 16,
-    color: '#888',
+    color: "#888",
   },
   price: {
     fontSize: 20,
-    color: '#000',
+    color: "#000",
   },
   availability: {
     fontSize: 16,
-    color: '#008000',
+    color: "#008000",
   },
   id: {
     fontSize: 12,
-    color: '#888',
+    color: "#888",
   },
 });
