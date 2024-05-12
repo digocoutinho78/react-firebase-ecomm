@@ -54,9 +54,9 @@ const handleCadastroProduto = async(nomeProduto, descricao, categoria, precoReai
       <TextInput  style={styles.input} value={disponibilidade} keyboardType="number-pad" onChangeText={setDisponibilidade}/>
       <Button title="cadastrar produto" onPress={() => handleCadastroProduto(nomeProduto, descricao, categoria, precoReais, disponibilidade)}/> 
 
-      <Button  title="deletar" onPress={() => deletarProduto("-NxYri_jkDUlPqEW9HlR")} />
+      {/* <Button  title="deletar" onPress={() => deletarProduto("-NxYri_jkDUlPqEW9HlR")} />
 
-      <Button  title="editar" onPress={() => editarProduto("-NxY7skC6iAeKFdW09sY","jabulani", "A bola de futebol mais sinistra", "bola", "100R$", 50)}/>
+      <Button  title="editar" onPress={() => editarProduto("-NxY7skC6iAeKFdW09sY","jabulani", "A bola de futebol mais sinistra", "bola", "100R$", 50)}/> */}
     </View>
   )
 }

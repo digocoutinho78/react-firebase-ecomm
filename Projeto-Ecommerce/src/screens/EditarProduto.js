@@ -43,7 +43,7 @@ export default EditarProduto = ({ route, navigation }) => {
       <Text style={styles.label}>Disponibilidade:</Text>
       <TextInput style={styles.input} value={produto?.disponibilidade} onChangeText={text => setProduto({ ...produto, disponibilidade: text })} />
       {/* Renderizando o botão de edição */}
-      <Button title="Editar Produto" onPress={handleEdit} />
+      <Button title="Confirmar alteração" onPress={handleEdit} />
     </View>
   );
 };
@@ -57,15 +57,19 @@ const styles = StyleSheet.create({
     backgroundColor: "#274C77",
   },
   label: {
+    color: "#A3CEF1",
     fontSize: 18,
     fontWeight: 'bold',
   },
   input: {
-    height: 40,
-    width: '80%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginTop: 10,
-    padding: 10,
+    borderWidth: 2,
+    width:250,
+    borderColor: "#A3CEF1",
+    marginTop:10,
+    marginBottom:30,
+    borderRadius: 10,
+    backgroundColor: "#E7ECEF",
+    paddingLeft:10,
+    paddingRight: 10,
   },
 });

@@ -1,6 +1,6 @@
 // Importando os componentes necessários do React e React Native
 import React, { useEffect, useState } from "react";
-import { Text, StyleSheet, View, Button, Alert, Image } from "react-native";
+import { Text, StyleSheet, View, Button, Alert, Image, TouchableOpacity } from "react-native";
 import { pegarPorId, deletarProduto, editarProduto } from "../services/produtosService"; // Importando os métodos necessários do serviço de produtos
 
 export default DetalhesProduto = ({ route, navigation }) => {
@@ -43,15 +43,15 @@ export default DetalhesProduto = ({ route, navigation }) => {
       {/* Renderizando os detalhes do produto */}
       <Text style={styles.title}>{produto?.nome}</Text>
       <Text style={styles.description}>{produto?.descricao}</Text>
-      <Text style={styles.category}>{produto?.categoria}</Text>
-      <Text style={styles.price}>{produto?.precoReais}</Text>
+      <Text style={styles.category}>categoria: {produto?.categoria}</Text>
+      <Text style={styles.price}>valor: {produto?.precoReais}</Text>
       <Text style={styles.availability}>{produto?.disponibilidade ? "Disponível" : "Indisponível"}</Text>
       <Text style={styles.id}>{produto?.id}</Text>
       {/* Renderizando a imagem do produto (espaço reservado) */}
       <Image style={styles.image} source={{ uri: 'https://via.placeholder.com/150' }} />
       {/* Renderizando os botões de editar e deletar */}
-      <Button title="Editar Produto" onPress={handleEdit} />
-      <Button title="Deletar Produto" onPress={handleDelete} color="red" />
+      <TouchableOpacity style={styles.button} title="Editar Produto" onPress={handleEdit} ></TouchableOpacity>
+      <TouchableOpacity style={styles.button}  onPress={handleDelete} color="red" ><Text>Deletar Produto</Text></TouchableOpacity>
     </View>
   );
 };
@@ -65,11 +65,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#274C77",
   },
   title: {
+    color: "#E7ECEF",
     fontSize: 24,
     fontWeight: 'bold',
   },
   description: {
+    color: "#A3CEF1",
     fontSize: 18,
+    paddingTop: 20,
   },
   category: {
     fontSize: 16,
@@ -77,7 +80,8 @@ const styles = StyleSheet.create({
   },
   price: {
     fontSize: 20,
-    color: '#000',
+    color: "#A3CEF1",
+    paddingTop: 20,
   },
   availability: {
     fontSize: 16,
@@ -92,4 +96,15 @@ const styles = StyleSheet.create({
     height: 150,
     margin: 10,
   },
+  button:{
+    width: 100,
+    height: 40,
+    backgroundColor: "white",
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    marginBottom: 15,
+    fontSize: 5,
+    color:"#274C77"
+  }
 });
