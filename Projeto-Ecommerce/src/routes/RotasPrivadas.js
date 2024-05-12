@@ -5,7 +5,7 @@ import TabUm from "../screens/Lista";
 import DetalhesProduto from '../screens/DetalhesProduto'; // Importando o componente DetalhesProduto
 import EditarProduto from '../screens/EditarProduto';
 import { FontAwesome } from "@expo/vector-icons";
-import TabDois from "../screens/TabDois";
+import Reposicao from "../screens/Reposicao";
 import AboutScreen from "../screens/AboutScreen";
 import Home from "../screens/Cadastro";
 
@@ -41,7 +41,7 @@ function TabNavigator() {
 
 
       <Tab.Screen name="Solicitar reposição"
-        component={TabDois}
+        component={Reposicao}
         options={{
           headerShown: false,
           tabBarIcon: ({ size, color }) => (
