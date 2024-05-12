@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import 'react-native-gesture-handler';
-import { View, Text, TouchableOpacity, TextInput, Image, StyleSheet, Alert } from "react-native";
+import { View, Text, TouchableOpacity, TextInput, Image, StyleSheet, Alert, ImageBackground } from "react-native";
+import bgImage from '../../assets/bg-02.png'
+
 
 
 export const Login = () => {
@@ -21,10 +23,12 @@ export const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <ImageBackground source={bgImage} style={styles.bgImageStyle}>
+    <View  style={styles.container}>
       <View style={styles.header} >
         
       </View>
+      
       <TextInput 
         style={styles.input} 
         placeholder="Email" 
@@ -42,6 +46,7 @@ export const Login = () => {
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
     </View>
+    </ImageBackground>
   );
 };
 
@@ -51,7 +56,8 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#274C77",
+    // backgroundColor: '#274C77',
+    
   },
   title: {
     fontSize: 20,
@@ -98,4 +104,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     height: "10%",
   },
+
+  bgImageStyle:{
+    alignContent: 'center',
+    flex: 1,
+    width: "100%",
+    justifyContent: 'center'
+  }
 });
