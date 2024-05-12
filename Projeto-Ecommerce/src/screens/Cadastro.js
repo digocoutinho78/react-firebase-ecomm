@@ -1,3 +1,5 @@
+//cadastro originalmente chamado de Home.js
+
 import { Text, View, StyleSheet, Button, TextInput, Alert, ImageBackground } from "react-native";
 import {
   criarProduto,

@@ -1,4 +1,4 @@
-// Importando os componentes necessários do React e React Native
+// Lista originalmente chamado tabUm.js
 
 import React, { useState, useCallback } from "react";
 import {

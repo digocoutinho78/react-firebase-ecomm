@@ -1,13 +1,13 @@
 // Importando os componentes necessários do React Navigation
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from '@react-navigation/stack';
-import TabUm from "../screens/TabUm";
+import TabUm from "../screens/Lista";
 import DetalhesProduto from '../screens/DetalhesProduto'; // Importando o componente DetalhesProduto
 import EditarProduto from '../screens/EditarProduto';
 import { FontAwesome } from "@expo/vector-icons";
 import TabDois from "../screens/TabDois";
 import AboutScreen from "../screens/AboutScreen";
-import Home from "../screens/Home";
+import Home from "../screens/Cadastro";
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
