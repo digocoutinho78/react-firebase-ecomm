@@ -1,10 +1,11 @@
-import { Text, View, StyleSheet, Button, TextInput, Alert } from "react-native";
+import { Text, View, StyleSheet, Button, TextInput, Alert, ImageBackground } from "react-native";
 import {
   criarProduto,
   deletarProduto,
   editarProduto,
 } from "../services/produtosService";
 import { useState } from "react";
+import bgImage from '../../assets/bg-01.png';
 
 //Componente para testar as tabs estão funcionando
 export default Home = () => {
@@ -45,6 +46,7 @@ export default Home = () => {
   };
 
   return (
+    <ImageBackground source={bgImage} style={styles.bgImageStyle}>
     <View style={styles.container}>
       <Text style={styles.textoTit}>CADASTRAR PRODUTO</Text>
       <Text></Text>
@@ -97,6 +99,7 @@ export default Home = () => {
         }
       />
     </View>
+      </ImageBackground>
   );
 };
 
@@ -105,7 +108,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#274C77",
+    // backgroundColor: "#274C77",
   },
   input: {
     borderWidth: 2,
@@ -137,7 +140,7 @@ const styles = StyleSheet.create({
 
   textoTit: {
     color: "#E7ECEF",
-    fontSize: 20,
+    fontSize: 15,
     fontWeight: "600",
     marginBottom: 20,
     marginTop: 20,
@@ -148,4 +151,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
     textAlign: "center",
   },
+  bgImageStyle:{
+    alignContent: 'center',
+    flex: 1,
+    width: "100%",
+    justifyContent: 'center'
+  }
 });
