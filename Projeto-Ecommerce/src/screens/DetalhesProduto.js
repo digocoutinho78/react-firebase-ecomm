@@ -1,7 +1,8 @@
 // Importando os componentes necessários do React e React Native
 import React, { useEffect, useState } from "react";
-import { Text, StyleSheet, View, Button, Alert, Image, TouchableOpacity } from "react-native";
+import { Text, StyleSheet, View, Button, Alert, Image, TouchableOpacity, ImageBackground } from "react-native";
 import { pegarPorId, deletarProduto, editarProduto } from "../services/produtosService"; // Importando os métodos necessários do serviço de produtos
+import bgImage from '../../assets/bg-01.png';
 
 export default DetalhesProduto = ({ route, navigation }) => {
   const [produto, setProduto] = useState(null); // Estado para armazenar os detalhes do produto
@@ -45,6 +46,7 @@ export default DetalhesProduto = ({ route, navigation }) => {
 
   // Renderização do componente
   return (
+    <ImageBackground source={bgImage} style={styles.bgImageStyle}>
     <View style={styles.container}>
       {/* Renderizando os detalhes do produto */}
       <Text style={styles.title}>{produto?.nome}</Text>
@@ -59,6 +61,7 @@ export default DetalhesProduto = ({ route, navigation }) => {
       <TouchableOpacity style={styles.buttonEditar}  onPress={handleEdit} ><Text style={styles.TxtEditar}>Editar </Text></TouchableOpacity>
       <TouchableOpacity style={styles.buttonDeletar}  onPress={handleDelete}  ><Text style={styles.TxtDeletar}>Deletar </Text></TouchableOpacity>
     </View>
+    </ImageBackground>
   );
 };
 
@@ -68,7 +71,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#274C77",
+    // backgroundColor: "#274C77",
   },
   title: {
     color: "#E7ECEF",
@@ -135,5 +138,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 14,
     color:"white"
+  },
+  bgImageStyle:{
+    alignContent: 'center',
+    flex: 1,
+    width: "100%",
+    justifyContent: 'center'
   }
 });

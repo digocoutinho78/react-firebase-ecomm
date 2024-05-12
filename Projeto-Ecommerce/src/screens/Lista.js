@@ -7,9 +7,12 @@ import {
   FlatList,
   View,
   TouchableOpacity,
+  ImageBackground,
 } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import { listarProduto } from "../services/produtosService"; // Importando o método listarProduto do serviço de produtos
+import bgImage from '../../assets/bg-01.png';
+
 
 // Componente TabUm
 export default TabUm = ({ navigation }) => {
@@ -27,6 +30,7 @@ export default TabUm = ({ navigation }) => {
     }, [])
   );
   return (
+    <ImageBackground source={bgImage} style={styles.bgImageStyle}>
     <View style={styles.container}>
       <Text style={styles.titleScreen}> PRODUTOS CADASTRADOS</Text>
 
@@ -57,8 +61,9 @@ export default TabUm = ({ navigation }) => {
             </View>
           </TouchableOpacity>
         )}
-      />
+        />
     </View>
+        </ImageBackground>
   );
 };
 
@@ -68,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#274C77",
+    // backgroundColor: "#274C77",
     paddingTop: 70,
   },
   item: {
@@ -81,7 +86,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   titleScreen: {
-    fontSize: 24,
+    fontSize: 15,
     fontWeight: "bold",
     marginBottom: 10,
     color: "whitesmoke",
@@ -110,5 +115,11 @@ const styles = StyleSheet.create({
   id: {
     fontSize: 12,
     color: "#888",
+  },
+  bgImageStyle:{
+    alignContent: 'center',
+    flex: 1,
+    width: "100%",
+    justifyContent: 'center'
   },
 });
