@@ -36,20 +36,7 @@ export default DetalhesProduto = ({ route, navigation }) => {
       ]
     );
   };
-  //   Alert.alert(
-  //     "Deletar Produto",
-  //     "Tem certeza de que deseja deletar este produto?",
-  //     [
-  //       {
-  //         text: "Cancelar",
-  //         style: "cancel"
-  //       },
-  //       { text: "OK", onPress: () => deletarProduto(route.params.id) }
-  //     ]
-  //   );
-  // };
 
-  // Função para lidar com a edição do produto
   const handleEdit = () => {
     // Aqui você pode navegar para a tela de edição de produto
     // Passando o ID do produto como parâmetro

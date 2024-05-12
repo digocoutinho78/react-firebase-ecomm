@@ -40,7 +40,7 @@ function TabNavigator() {
         }} />
 
 
-      <Tab.Screen name="Sobre"
+      <Tab.Screen name="Solicitar reposição"
         component={TabDois}
         options={{
           headerShown: false,
@@ -49,7 +49,7 @@ function TabNavigator() {
           ),
         }} />
 
-      <Tab.Screen name="Team"
+      <Tab.Screen name="Equipe"
         component={AboutScreen}
         options={{
           headerShown: false,
