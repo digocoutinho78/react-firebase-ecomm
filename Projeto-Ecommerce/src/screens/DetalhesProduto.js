@@ -17,6 +17,7 @@ export default DetalhesProduto = ({ route, navigation }) => {
 
   // Função para lidar com a exclusão do produto
   const handleDelete = () => {
+
     Alert.alert(
       "Deletar Produto",
       "Tem certeza de que deseja deletar este produto?",
@@ -25,10 +26,28 @@ export default DetalhesProduto = ({ route, navigation }) => {
           text: "Cancelar",
           style: "cancel"
         },
-        { text: "OK", onPress: () => deletarProduto(route.params.id) }
+        { 
+          text: "OK", 
+          onPress: async () => {
+            await deletarProduto(route.params.id);
+            navigation.goBack();
+          } 
+        }
       ]
     );
   };
+  //   Alert.alert(
+  //     "Deletar Produto",
+  //     "Tem certeza de que deseja deletar este produto?",
+  //     [
+  //       {
+  //         text: "Cancelar",
+  //         style: "cancel"
+  //       },
+  //       { text: "OK", onPress: () => deletarProduto(route.params.id) }
+  //     ]
+  //   );
+  // };
 
   // Função para lidar com a edição do produto
   const handleEdit = () => {
@@ -50,8 +69,8 @@ export default DetalhesProduto = ({ route, navigation }) => {
       {/* Renderizando a imagem do produto (espaço reservado) */}
       <Image style={styles.image} source={{ uri: 'https://via.placeholder.com/150' }} />
       {/* Renderizando os botões de editar e deletar */}
-      <TouchableOpacity style={styles.button} title="Editar Produto" onPress={handleEdit} ></TouchableOpacity>
-      <TouchableOpacity style={styles.button}  onPress={handleDelete} color="red" ><Text>Deletar Produto</Text></TouchableOpacity>
+      <TouchableOpacity style={styles.buttonEditar}  onPress={handleEdit} ><Text style={styles.TxtEditar}>Editar </Text></TouchableOpacity>
+      <TouchableOpacity style={styles.buttonDeletar}  onPress={handleDelete}  ><Text style={styles.TxtDeletar}>Deletar </Text></TouchableOpacity>
     </View>
   );
 };
@@ -73,6 +92,8 @@ const styles = StyleSheet.create({
     color: "#A3CEF1",
     fontSize: 18,
     paddingTop: 20,
+    paddingLeft: 20,
+    paddingRight:20,
   },
   category: {
     fontSize: 16,
@@ -96,15 +117,36 @@ const styles = StyleSheet.create({
     height: 150,
     margin: 10,
   },
-  button:{
+  buttonDeletar:{
     width: 100,
     height: 40,
-    backgroundColor: "white",
+    backgroundColor: "red",
     borderRadius: 10,
     padding: 10,
     margin: 10,
     marginBottom: 15,
     fontSize: 5,
-    color:"#274C77"
+    color:"white"
+  },
+  buttonEditar:{
+    width: 100,
+    height: 40,
+    backgroundColor: "#A3CEF1",
+    borderRadius: 10,
+    padding: 10,
+    margin: 10,
+    marginBottom: 15,
+    fontSize: 5,
+    color:"white"
+  },
+  TxtEditar:{
+    textAlign: "center",
+    fontSize: 14,
+    color:"white"
+  },
+  TxtDeletar:{
+    textAlign: "center",
+    fontSize: 14,
+    color:"white"
   }
 });

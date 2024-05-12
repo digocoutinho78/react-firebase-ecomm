@@ -1,3 +1,4 @@
+import { Alert } from 'react-native';
 import { api } from './api'
 
 
@@ -17,6 +18,7 @@ export const deletarProduto = async (id) => {
   try {
     // Faz uma requisição DELETE para a API, passando o ID do produto a ser excluído
     const resp = await api.delete("/Produtos/" + id + ".json");
+    Alert.alert("Produto deletado com sucesso.")
   } catch (err) {
     // Em caso de erro, loga a mensagem de erro
     console.log("ERRO: " + err);
