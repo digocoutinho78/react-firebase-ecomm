@@ -20,35 +20,36 @@ function TabNavigator() {
         // esconder o header
         headerShown: false,
       }}
-    >
-      <Tab.Screen name="Home"
-        component={Home}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="home" color={color} size={size} />
-          ),
-        }} />
-
-      <Tab.Screen name="Tela 1"
+      >
+      <Tab.Screen name="Lista Produtos"
         component={TabUm}
         options={{
           headerShown: false,
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="tag" color={color} size={size} />
+            <FontAwesome name="list" color={color} size={size} />
           ),
         }} />
 
-      <Tab.Screen name="Tela 2"
+      <Tab.Screen name="Cadastrar Novo"
+        component={Home}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ size, color }) => (
+            <FontAwesome name="file" color={color} size={size} />
+          ),
+        }} />
+
+
+      <Tab.Screen name="Sobre"
         component={TabDois}
         options={{
           headerShown: false,
           tabBarIcon: ({ size, color }) => (
-            <FontAwesome name="globe" color={color} size={size} />
+            <FontAwesome name="info" color={color} size={size} />
           ),
         }} />
 
-      <Tab.Screen name="Sobre"
+      <Tab.Screen name="Team"
         component={AboutScreen}
         options={{
           headerShown: false,
