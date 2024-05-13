@@ -53,7 +53,7 @@ export default TabUm = ({ navigation }) => {
                 Descrição: {item.descricao}
               </Text>
               <Text style={styles.category}>Categoria: {item.categoria}</Text>
-              <Text style={styles.price}>Valor unt: {item.precoReais}</Text>
+              <Text style={styles.price}>Valor unt: {item.precoReais}R$</Text>
               <Text style={styles.availability}>
                 Status: {item.disponibilidade ? "Disponível" : "Indisponível"}
               </Text>

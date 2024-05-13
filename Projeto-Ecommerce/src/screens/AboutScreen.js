@@ -10,10 +10,11 @@ const AboutScreen = () => {
   return (
     <ScrollView >
       <View style={styles.container}>
-      <Image  style={styles.profileImage} />
+      <Image  style={styles.profileImage} source={require('../../assets/jean.jpg')}/>
       <View>
         <Text style={styles.title1}>Jean Pires</Text>
-        <Text style={styles.description}>JEAN PIRES. SÓ ISSO</Text>
+        <Text style={styles.description}>Olá, meu nome é Jean Pires e atualmente estou participando da residência em TIC/Software promovida pelo Serratec em parceria com o Senac. Nessa jornada, tenho explorado e adquirido conhecimentos em diversas tecnologias, incluindo HTML, CSS, Java, Typescript, Javascript e React.
+Estou sempre buscando aprender mais para criar soluções inovadoras e estou ansioso para colaborar em projetos desafiadores, contribuindo para a área de desenvolvimento de software</Text>
       </View>
       <View style={styles.linksContainer}>
                 <TouchableOpacity onPress={() => Linking.openURL('https://github.com/JeanPiresM')}>
@@ -24,7 +25,7 @@ const AboutScreen = () => {
                 </TouchableOpacity>
             </View>
       <View>
-      <Image  style={styles.profileImage} />
+      <Image  style={styles.profileImage} source={require('../../assets/miguel.jpg')}/>
         <Text style={styles.title1}>Miguel Araujo</Text>
         <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver, além disso um homem muito esbelto.</Text>
       </View>
@@ -37,8 +38,7 @@ const AboutScreen = () => {
                 </TouchableOpacity>
             </View>
       <View>
-      <Image  style={styles.profileImage} />
-
+      <Image  style={styles.profileImage} source={require('../../assets/rodrigo.jpg')}/>
         <Text style={styles.title1}>Rodrigo Coutinho</Text>
         <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
       </View>
@@ -51,7 +51,7 @@ const AboutScreen = () => {
                 </TouchableOpacity>
             </View>
       <View>
-      <Image  style={styles.profileImage} />
+      <Image  style={styles.profileImage} source={require('../../assets/pedro.jpg')}/>
 
         <Text style={styles.title1}>Pedro Henrique</Text>
         <Text style={styles.description}>Aluno de Engenharia de Computação no CEFET Petrópolis e residente no Serratec/Senac, pego 50kg cada lado no supino..</Text>
@@ -79,8 +79,7 @@ const AboutScreen = () => {
                 </TouchableOpacity>
             </View>
       <View>
-      <Image  style={styles.profileImage} />
-
+      <Image  style={styles.profileImage} source={require('../../assets/flavio.jpg')}/>
         <Text style={styles.title1}>Flávio Lourenço</Text>
         <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
       </View>
@@ -113,7 +112,9 @@ const styles = StyleSheet.create({
     width: 150,
     height: 150,
     borderRadius: 75, // metade da largura e altura para criar um círculo
-    marginBottom: 20
+    marginBottom: 20,
+    alignSelf: 'center',
+    marginTop: 20
   },
   title: {
     fontSize: 24,
