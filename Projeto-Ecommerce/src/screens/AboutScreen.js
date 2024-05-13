@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity, Linking, ScrollView } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Linking, ScrollView, KeyboardAvoidingView } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 
@@ -8,7 +8,10 @@ const AboutScreen = () => {
   //Obs: Substituam os detalhes do perfil de voces onde já está determinado com os respectivos nomes
   // Substituam com suas fotos, links de github e linkedin e suas respectivas descrições
   return (
+
+
     <View style={styles.container}>
+      <KeyboardAvoidingView>
         <ScrollView >
       <Text style={styles.textoTit}>EQUIPE DE DESENVOLVIMENTO</Text>
       <Text style={styles.title}>_______________________</Text>
@@ -107,6 +110,7 @@ Estou sempre buscando aprender mais para criar soluções inovadoras e estou ans
       <Text style={styles.description}>Este é um aplicativo criado com React Native para demonstrar habilidades de desenvolvimento móvel e apresentar um projeto sobre Ecommerce.</Text>
       <Text style={styles.version}>Versão 1.0.2</Text>
       </ScrollView>
+      </KeyboardAvoidingView>
       </View>
     
   );

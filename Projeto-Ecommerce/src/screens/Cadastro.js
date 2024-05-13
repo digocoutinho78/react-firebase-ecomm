@@ -1,6 +1,6 @@
 //cadastro originalmente chamado de Home.js
 
-import { Text, View, StyleSheet, Button, TextInput, Alert, ImageBackground } from "react-native";
+import { Text, View, StyleSheet, Button, TextInput, Alert, ImageBackground, KeyboardAvoidingView, Platform} from "react-native";
 import {
   criarProduto,
   deletarProduto,
@@ -49,7 +49,8 @@ export default Home = () => {
 
   return (
     <ImageBackground source={bgImage} style={styles.bgImageStyle}>
-    <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+   
       <Text style={styles.textoTit}>CADASTRAR PRODUTO</Text>
       <Text></Text>
       <Text style={styles.texto}>NOME PRODUTO</Text>
@@ -100,7 +101,8 @@ export default Home = () => {
           )
         }
       />
-    </View>
+    
+      </KeyboardAvoidingView>
       </ImageBackground>
   );
 };
@@ -111,6 +113,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     // backgroundColor: "#274C77",
+    paddingTop: 30,
   },
   input: {
     borderWidth: 2,
@@ -122,6 +125,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#E7ECEF",
     paddingLeft: 10,
     paddingRight: 10,
+    height:30,
   },
   inputDescricao: {
     borderWidth: 2,
