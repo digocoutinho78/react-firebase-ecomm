@@ -30,8 +30,8 @@ export default TabUm = ({ navigation }) => {
     }, [])
   );
   return (
-    <ImageBackground source={bgImage} style={styles.bgImageStyle}>
     <View style={styles.container}>
+      <ImageBackground source={bgImage} style={styles.bgImageStyle}>
       <Text style={styles.titleScreen}> PRODUTOS CADASTRADOS</Text>
 
       {/* Renderizando a lista de produtos */}
@@ -62,8 +62,8 @@ export default TabUm = ({ navigation }) => {
           </TouchableOpacity>
         )}
         />
-    </View>
         </ImageBackground>
+    </View>
   );
 };
 
@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     // backgroundColor: "#274C77",
-    paddingTop: 70,
+    paddingTop: 30,
   },
   item: {
     backgroundColor: "white",
@@ -90,8 +90,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 10,
     color: "whitesmoke",
-    marginTop: 20,
+    marginTop: 80,
     marginBottom: 20,
+    marginLeft: 100,
   },
   title: {
     fontSize: 24,
