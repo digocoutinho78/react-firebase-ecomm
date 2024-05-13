@@ -8,6 +8,8 @@ import {
 } from "../services/produtosService";
 import { useState } from "react";
 import bgImage from '../../assets/bg-01.png';
+import * as ImagePicker from 'expo-image-picker';
+
 
 //Componente para testar as tabs estão funcionando
 export default Home = () => {
@@ -16,8 +18,28 @@ export default Home = () => {
   const [categoria, setCategoria] = useState();
   const [precoReais, setPrecoReais] = useState();
   const [disponibilidade, setDisponibilidade] = useState(0);
+  const [img, setImg] = useState();
+
+  
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 0.2,
+      base64: true
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setImg(result.assets[0].uri);
+    }
+  };
 
   const handleCadastroProduto = async (
+    img,
     nomeProduto,
     descricao,
     categoria,
@@ -26,6 +48,7 @@ export default Home = () => {
   ) => {
     try {
       const cadastrarProd = await criarProduto({
+        img: img,
         nome: nomeProduto,
         descricao: descricao,
         categoria: categoria,
@@ -37,6 +60,7 @@ export default Home = () => {
       setCategoria("");
       setPrecoReais("");
       setDisponibilidade("0");
+      setImg("");
 
       return Alert.alert(
         "Cadastro concluido: ",
@@ -89,10 +113,13 @@ export default Home = () => {
         keyboardType="number-pad"
         onChangeText={setDisponibilidade}
       />
+      <Button title="Pick an image from camera roll" onPress={pickImage} />
+      {img && <Image source={{ uri: img }} style={{width: 100, height: 100 }} />}
       <Button
         title="cadastrar produto"
         onPress={() =>
           handleCadastroProduto(
+            img,
             nomeProduto,
             descricao,
             categoria,
