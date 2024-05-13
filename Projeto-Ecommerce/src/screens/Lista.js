@@ -8,6 +8,7 @@ import {
   View,
   TouchableOpacity,
   ImageBackground,
+  Image
 } from "react-native";
 import { useFocusEffect } from "@react-navigation/native";
 import { listarProduto } from "../services/produtosService"; // Importando o método listarProduto do serviço de produtos
@@ -48,6 +49,7 @@ export default TabUm = ({ navigation }) => {
             {/* Renderizando cada item da lista */}
             <View style={styles.item}>
               {/* Renderizando os atributos do produto */}
+              <Image source={{uri : item.img}} style={{width: 100, height: 100}}/>
               <Text style={styles.title}>{item.nome}</Text>
               <Text style={styles.description}>
                 Descrição: {item.descricao}

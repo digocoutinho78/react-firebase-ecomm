@@ -56,7 +56,7 @@ export default DetalhesProduto = ({ route, navigation }) => {
       <Text style={styles.availability}>{produto?.disponibilidade ? "Disponível" : "Indisponível"}</Text>
       <Text style={styles.id}>{produto?.id}</Text>
       {/* Renderizando a imagem do produto (espaço reservado) */}
-      <Image style={styles.image} source={{ uri: 'https://via.placeholder.com/150' }} />
+      <Image style={styles.image} source={{ uri: produto?.img }} />
       {/* Renderizando os botões de editar e deletar */}
       <TouchableOpacity style={styles.buttonEditar}  onPress={handleEdit} ><Text style={styles.TxtEditar}>Editar </Text></TouchableOpacity>
       <TouchableOpacity style={styles.buttonDeletar}  onPress={handleDelete}  ><Text style={styles.TxtDeletar}>Deletar </Text></TouchableOpacity>
