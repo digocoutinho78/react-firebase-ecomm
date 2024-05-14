@@ -78,7 +78,7 @@ Estou sempre buscando aprender mais para criar soluções inovadoras e estou ans
             </View>
             <Text style={styles.title}>_______________________</Text>
       <View>
-      <Image  style={styles.profileImage} />
+      <Image  style={styles.profileImage} source={require('../../assets/samuel.jpg')}/>
 
         <Text style={styles.title1}>Samuel Freitas</Text>
         <Text style={styles.description}>Meu nome é Samuel Freitas, sou jornalista e estou em transição de carreira, em formação para me tornar um programador Full-Stack. Para agregar ao projeto, além de minha experiência em redação, edição e reportagem, também usei os fundamentos da programação, como HTML, CSS e JavaScript, que adquiri através do curso que estou fazendo pelo Senac/Serratec.</Text>
