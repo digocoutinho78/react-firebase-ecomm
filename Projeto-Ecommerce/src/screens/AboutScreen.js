@@ -66,7 +66,7 @@ Estou sempre buscando aprender mais para criar soluções inovadoras e estou ans
       <Image  style={styles.profileImage} source={require('../../assets/pedro.jpg')}/>
 
         <Text style={styles.title1}>Pedro Henrique</Text>
-        <Text style={styles.description}>Aluno de Engenharia de Computação no CEFET Petrópolis e residente no Serratec/Senac, pego 50kg cada lado no supino..</Text>
+        <Text style={styles.description}>Aluno de Engenharia de Computação no CEFET Petrópolis e residente no Serratec/Senac. Atualmente procurando desenvolver minhas habilidades em desenvolvimento de softwares.</Text>
       </View>
       <View style={styles.linksContainer}>
                 <TouchableOpacity onPress={() => Linking.openURL('https://github.com/PedroHenriqueBRibeiro')}>
@@ -81,7 +81,7 @@ Estou sempre buscando aprender mais para criar soluções inovadoras e estou ans
       <Image  style={styles.profileImage} />
 
         <Text style={styles.title1}>Samuel Freitas</Text>
-        <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
+        <Text style={styles.description}>Meu nome é Samuel Freitas, sou jornalista e estou em transição de carreira, em formação para me tornar um programador Full-Stack. Para agregar ao projeto, além de minha experiência em redação, edição e reportagem, também usei os fundamentos da programação, como HTML, CSS e JavaScript, que adquiri através do curso que estou fazendo pelo Senac/Serratec.</Text>
       </View>
       <View style={styles.linksContainer}>
                 <TouchableOpacity onPress={() => Linking.openURL('https://github.com/SamuFreitas10')}>
@@ -95,7 +95,7 @@ Estou sempre buscando aprender mais para criar soluções inovadoras e estou ans
       <View>
       <Image  style={styles.profileImage} source={require('../../assets/flavio.jpg')}/>
         <Text style={styles.title1}>Flávio Lourenço</Text>
-        <Text style={styles.description}>Aluno na Faeterj Petrópolis e residente no Serratec/Senac, estagiário na Orange Business Services, tenho 20 anos e busco desenvolver e aprimorar minhas habilidades no âmbito da tecnologia, contribuindo e dando o suporte necessário em quaisquer áreas ou projetos que estiver.</Text>
+        <Text style={styles.description}>Flávio Lourenço, apaixonado por tecnologia desde a infância, atualmente migrando para uma carreira em desenvolvimento de software Full Stack. No Senac, estou aprimorando minhas habilidades técnicas e comportamentais, construindo seu futuro com determinação e entusiasmo.</Text>
       </View>
       <View style={styles.linksContainer}>
                 <TouchableOpacity onPress={() => Linking.openURL('https://github.com/Mig2445465')}>
