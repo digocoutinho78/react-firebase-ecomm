@@ -3,10 +3,10 @@ import { api } from './api'
 
 
 // Método para criar/cadastrar um produto com um parâmetro para a categoria do produto
-export const criarProduto = async (dadosProduto) => {
+export const criarProduto = async (dadosProduto, token) => {
   try {
     // Faz uma requisição POST para a API, enviando os dados do produto
-    const resp = await api.post(`/Produtos.json`, dadosProduto);
+    const resp = await api.post(`/Produtos.json?auth=${token}`, dadosProduto);
   } catch (err) {
     // Em caso de erro, loga a mensagem de erro
     console.log("ERRO: " + err);
@@ -50,11 +50,11 @@ export const editarProduto = async (
 };
 
 // Método para listar todos os produtos
-export const listarProduto = async () => {
+export const listarProduto = async (token) => {
   try {
     const produtos = [];
     // Faz uma requisição GET para a API, obtendo todos os produtos
-    const resp = await api.get(`/Produtos.json`);
+    const resp = await api.get(`/Produtos.json?auth=${token}`);
 
     // Itera sobre os produtos retornados e os adiciona a um array
     for (const key in resp.data) {

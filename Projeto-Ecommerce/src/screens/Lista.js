@@ -1,6 +1,6 @@
 // Lista originalmente chamado tabUm.js
 
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useContext } from "react";
 import {
   Text,
   StyleSheet,
@@ -13,18 +13,32 @@ import {
 import { useFocusEffect } from "@react-navigation/native";
 import { listarProduto } from "../services/produtosService"; // Importando o método listarProduto do serviço de produtos
 import bgImage from '../../assets/bg-01.png';
+import { AuthContext } from "../context/authContext";
 
 
 // Componente TabUm
 export default TabUm = ({ navigation }) => {
   // Adicionando navigation como propriedade
   const [todosProdutos, setTodosProdutos] = useState([]); // Estado para armazenar todos os produtos
+  const authCtx = useContext(AuthContext)
+
+  /*
+    useEffect(() => {
+        const fetch = async () => {
+            console.log("USEEFFECT: ", authCtx.token.length)
+            const data = await getAllTasks(authCtx.token)
+            console.log("DATAA: ",data)
+            setAllTasks(data)
+        }
+        fetch();
+    }, [])
+*/
 
   // Hook useFocusEffect para buscar os produtos quando a tela ganha foco
   useFocusEffect(
     useCallback(() => {
       const fetch = async () => {
-        const data = await listarProduto(); // Buscando os produtos
+        const data = await listarProduto(authCtx.token); // Buscando os produtos
         setTodosProdutos(data); // Atualizando o estado com os produtos buscados
       };
       fetch();

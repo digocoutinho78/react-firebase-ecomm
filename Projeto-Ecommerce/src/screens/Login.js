@@ -1,8 +1,9 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
 import 'react-native-gesture-handler';
 import { View, Text, TouchableOpacity, TextInput, Image, StyleSheet, Alert, ImageBackground } from "react-native";
 import bgImage from '../../assets/bg-02.png'
+import { AuthContext } from '../context/authContext';
 
 
 
@@ -12,14 +13,17 @@ export const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    //ativar quando concluir teste
-    // if (email === 'nome@email.com' && password === '123456') {
-      if (email === '' && password === '') {
-      navigation.navigate('Tabs');
-    } else {
-      Alert.alert('Erro', 'Email ou senha inválidos');
-    }
+  const authCtx = useContext(AuthContext);
+
+
+//para o metodo handle login
+
+  const handleLogin = async() => {
+  try{
+  await authCtx.signin(email, password)
+  }catch(err){
+    Alert.alert('Erro', 'Email ou senha inválidos')
+  }
   };
 
   return (

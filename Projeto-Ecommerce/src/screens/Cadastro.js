@@ -1,14 +1,15 @@
 //cadastro originalmente chamado de Home.js
 
-import { Text, View, StyleSheet, Button, TextInput, Alert, ImageBackground, KeyboardAvoidingView, Platform} from "react-native";
+import { Text, Image, StyleSheet, Button, TextInput, Alert, ImageBackground, KeyboardAvoidingView, Platform} from "react-native";
 import {
   criarProduto,
   deletarProduto,
   editarProduto,
 } from "../services/produtosService";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import bgImage from '../../assets/bg-01.png';
 import * as ImagePicker from 'expo-image-picker';
+import { AuthContext } from "../context/authContext";
 
 
 //Componente para testar as tabs estão funcionando
@@ -20,7 +21,7 @@ export default Home = () => {
   const [disponibilidade, setDisponibilidade] = useState(0);
   const [img, setImg] = useState();
 
-  
+  const { token } = useContext(AuthContext)
   const pickImage = async () => {
     // No permissions request is necessary for launching the image library
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -54,7 +55,7 @@ export default Home = () => {
         categoria: categoria,
         precoReais: precoReais,
         disponibilidade: disponibilidade,
-      });
+      }, token);
       setNomeProduto("");
       setDescricao("");
       setCategoria("");

@@ -11,14 +11,14 @@ const authenticate = async (mode, email, password) => {
             password: password,
             returnSecureToken: true
         })
-        console.log(response.data)
+        console.log(response)
         return response.data.idToken
     } catch(err) {
-        console.log(err)
+        console.log("Erro de Authenticação", err)
     }
 }
 
-export const criarUsuario = async (email, password) => {
+export const createUser = async (email, password) => {
     const token = await authenticate("signUp", email, password)
     return token
 }
